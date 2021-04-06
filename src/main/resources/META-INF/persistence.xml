@@ -19,7 +19,9 @@
             <property name="hibernate.use_sql_comments" value="true" />
             <!--<property name="hibernate.jdbc.batch_size" value="10"/>-->
             <property name="hibernate.id.new_generator_mappings" value="true" />
-            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+
+            <!--이 속성을 추가하면 application 실행 시에 DB 테이블을 자동으로 생성-->
+            <property name="hibernate.hbm2ddl.auto" value="create" />
 
 
             <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->

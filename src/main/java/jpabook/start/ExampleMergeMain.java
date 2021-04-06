@@ -22,7 +22,7 @@ public class ExampleMergeMain {
 
         Member member = new Member();
         member.setId(id);
-        member.setId(username);
+        member.setUsername(username);
         member.setAge(age);
 
         manager1.persist(member);
