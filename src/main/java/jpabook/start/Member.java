@@ -16,7 +16,8 @@ import java.util.Date;
         columnNames = {"NAME","AGE"}
 )})
 public class Member {
-    @Id
+
+    @Id     //@Id는 엔티티 클래스의 필드를 DB 테이블의 기본키로 매핑한다
     @Column(name = "ID")
     private String id;
 
