@@ -21,10 +21,8 @@
             <property name="hibernate.id.new_generator_mappings" value="true" />
 
             <!--이 속성을 추가하면 application 실행 시에 DB 테이블을 자동으로 생성-->
-            <property name="hibernate.hbm2ddl.auto" value="create" />
-
-
             <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+
         </properties>
     </persistence-unit>
 

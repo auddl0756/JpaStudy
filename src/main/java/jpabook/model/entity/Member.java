@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 @Getter
 @Setter
-@Entity
+@Entity(name="jpabook.model.entity.Member")
 public class Member {
     @Id @GeneratedValue
     @Column(name="MEMBER_ID")

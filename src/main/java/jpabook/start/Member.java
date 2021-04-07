@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-@Entity
+@Entity(name="jpa.start.Member")
 //DDL에 unique 속성 추가 가능!
 //unique 속성이란 ? : primary key를 제외한 필드들에 고유성을 강제할 때 사용.
 @Table(name="MEMBER",uniqueConstraints = {@UniqueConstraint(
