@@ -1,4 +1,4 @@
-package jpabook.ch5;
+package jpabook.ch5_ORMBasic;
 
 import javax.persistence.*;
 import java.util.List;
@@ -35,13 +35,13 @@ public class TestMapping {
 
     //모든 연관관계 지우고 엔티티 제거해야 함. 아니면 나중에 없는 팀을 참조하려고 하면 널포인터 에러 발생 함.
     public static void testRemoveEntity(EntityManager manager){
-        Team team = manager.find(jpabook.ch5.Team.class,"team1");
+        Team team = manager.find(jpabook.ch5_ORMBasic.Team.class,"team1");
         manager.remove(team);
     }
 
     //연관관계 삭제하기. member1이라는 기본키를 가지는 멤버의 팀 소속 없애기
     public static void testRemoveRelation(EntityManager manager){
-        Member member = manager.find(jpabook.ch5.Member.class,"member1");
+        Member member = manager.find(jpabook.ch5_ORMBasic.Member.class,"member1");
 
         //update에서와 동일하게 이렇게 해주면 트랜잭션 커밋할 때 변경을 감지하고 자동으로 DB에도 반영해줌!!!!
         member.setTeam(null);
@@ -55,15 +55,15 @@ public class TestMapping {
 
         manager.persist(team2);
 
-        Member member = manager.find(jpabook.ch5.Member.class,"member1");
+        Member member = manager.find(jpabook.ch5_ORMBasic.Member.class,"member1");
         member.setTeam(team2);
     }
 
     //JPQL로 어떤 팀의 모든 멤버 찾기!
     public static void testFindBy_JPQL(EntityManager manager){
-        String jpql = "select m from jpabook.ch5.Member m join m.team t where t.name=:teamName";
+        String jpql = "select m from jpabook.ch5_ORMBasic.Member m join m.team t where t.name=:teamName";
 
-        List<Member> results = manager.createQuery(jpql,jpabook.ch5.Member.class)
+        List<Member> results = manager.createQuery(jpql,jpabook.ch5_ORMBasic.Member.class)
                                         .setParameter("teamName","팀1")
                                         .getResultList();
 
@@ -77,7 +77,7 @@ public class TestMapping {
 
     //객체 그래프 탐색 방법. 그래프 탐색이라는 이름이 좀 이상하긴 한데.. 왜 굳이 이런 이름으로 부를까
     public static void testFind(EntityManager manager){
-        Member member=manager.find(jpabook.ch5.Member.class,"member2");
+        Member member=manager.find(jpabook.ch5_ORMBasic.Member.class,"member2");
         Team team = member.getTeam();
         System.out.println("team name = "+team.getName());
     }
@@ -92,7 +92,7 @@ public class TestMapping {
 //
 //        manager.persist(team1);
 
-        Team team1 = manager.find(jpabook.ch5.Team.class,"team1");
+        Team team1 = manager.find(jpabook.ch5_ORMBasic.Team.class,"team1");
 //        System.out.println(team1.getId()+" "+team1.getName());
 
 //        //회원1 저장

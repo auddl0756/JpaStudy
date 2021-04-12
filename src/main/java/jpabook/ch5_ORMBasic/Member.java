@@ -1,6 +1,5 @@
-package jpabook.ch5;
+package jpabook.ch5_ORMBasic;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

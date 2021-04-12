@@ -1,4 +1,4 @@
-package jpabook.ch5;
+package jpabook.ch5_ORMBasic;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -34,7 +34,7 @@ public class TestMapping_Bidirectional {
     //JPA없이 객체로 프로그래밍 할 때를 고려해서
     //양쪽에 모두 값을 넣어주는 것이 제일 좋은 방법이다.
     public static void Save_Bidirectional(EntityManager manager){
-        Team team1 = manager.find(jpabook.ch5.Team.class,"team1");
+        Team team1 = manager.find(jpabook.ch5_ORMBasic.Team.class,"team1");
 
         Member member1 = new Member();
         member1.setId("member1");
@@ -58,7 +58,7 @@ public class TestMapping_Bidirectional {
     //팀이 team1인 모든 회원 찾기! 양방향 매핑을 활용!
     // (team class에서 @OneToMany(mapped ="team") 적용, List<Member> 추가)
     public static void FindMembersByTeam(EntityManager manager){
-        Team team = manager.find(jpabook.ch5.Team.class,"team1");
+        Team team = manager.find(jpabook.ch5_ORMBasic.Team.class,"team1");
         List<Member> members = team.getMembers();
 
         String result = members.stream()
