@@ -29,6 +29,7 @@ public class Test {
 
         //여기서 내부적으로(실제 SQL은)  Insert(team),Update(member1.fk),Update(member2.fk)가 일어남
         //1:N인데 1이 주인이다 보니..
+        //따라서 OneToMany는 안 좋다.
 //        manager.persist(team1);
 //        transaction.commit();
 
